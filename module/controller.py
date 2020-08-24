@@ -13,8 +13,12 @@ class Controller():
     def db_insert(self, url):
         mydb = self._db 
         try:
-            key = self.prepare_url()
-            mydb.insert_into_table("mytable", "mykey, long_url", [key, url])
+            try:
+                #if url is already in db, just reuse
+                key = mydb.get_from_table("mytable", "long_url", url)[1]
+            except:
+                key = self.prepare_url()
+                mydb.insert_into_table("mytable", "mykey, long_url", [key, url])
             return key
         except Exception as ex:
             print(ex)
