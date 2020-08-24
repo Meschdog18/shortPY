@@ -75,7 +75,10 @@ class Database():
         self._db.commit()
     def get_from_table(self, name , column ,short_id):
         mycursor = self._db.cursor(buffered=True)
-        mycursor.execute("SELECT * FROM {} WHERE {} = '{}'".format(name, column, short_id))
+        try:
+            mycursor.execute("SELECT * FROM {} WHERE {} = '{}'".format(name, column, short_id))
 
-        value = mycursor.fetchone()
+            value = mycursor.fetchone()
+        except Exception as ex:
+            print(ex)
         return value
