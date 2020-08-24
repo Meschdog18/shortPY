@@ -1,0 +1,2 @@
+If url is already stored in db, from a previous user, don't restore it. Waste of space, for now.. Unless we want to individually track each url
+

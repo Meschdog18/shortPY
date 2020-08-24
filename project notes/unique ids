@@ -1,0 +1,13 @@
+have to generate a unqiue id for every url, would use uuid4 but its too long
+
+I want to have a 7 digit id, so we need to find good a way todo this
+
+digit break down
+
+1-
+2-
+3-
+4-
+5-
+6-
+7-

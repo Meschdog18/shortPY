@@ -1,0 +1,21 @@
+Work as a cli at the moment, and maybe add a frontend down the line.
+
+work flow
+
+CREATEING A NEW URL
+
+-User types in the url they wish to shorten
+
+-Checks Db to make sure its not a dupe
+
+-If its not a dupe, than gen a unique id, and correlate that id to the orignal url
+
+-Return the new url
+
+RETREVING ORINGAL SITE URL
+
+-User types in their new url in webbrowser
+
+-Server reads ID in the params, and checks the DB for site 
+
+-If Found, redirects to site
