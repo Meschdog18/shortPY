@@ -10,11 +10,14 @@ class Controller():
         #db.check_database_exist("test")
         coloumns = "id INT AUTO_INCREMENT PRIMARY KEY, mykey VARCHAR(255),long_url VARCHAR(255)"
         self._db.create_table("mytable", coloumns)
-        self.db_insert("http://www.geeksengine.com/database/basic-select/column-alias.php")
-        self.db_get("nwUMppd")
     def db_insert(self, url):
-        mydb = self._db
-        mydb.insert_into_table("mytable", "mykey, long_url", [self.prepare_url(), url])
+        mydb = self._db 
+        try:
+            key = self.prepare_url()
+            mydb.insert_into_table("mytable", "mykey, long_url", [key, url])
+            return key
+        except Exception as ex:
+            print(ex)
     def db_get(self, key):
         mydb = self._db
         try:

@@ -1,2 +1,4 @@
 If url is already stored in db, from a previous user, don't restore it. Waste of space, for now.. Unless we want to individually track each url
 
+add ip logger (for tony)
+https://stackoverflow.com/questions/3759981/get-ip-address-of-visitors-using-flask-for-python
